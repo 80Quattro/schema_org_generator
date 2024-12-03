@@ -1,9 +1,10 @@
 <?php
+
 declare(strict_types=1);
 
 namespace GeorgRinger\SchemaOrgGenerator\Transformator;
 
-/**
+/*
  * This file is part of the "schema_org_generator" Extension for TYPO3 CMS.
  *
  * For the full copyright and license information, please read the
@@ -28,7 +29,6 @@ class TtAddressTransformator implements TransformatorInterface
 
     /**
      * @param Address $address
-     * @return Type
      */
     public function transform($address): Type
     {
@@ -45,10 +45,6 @@ class TtAddressTransformator implements TransformatorInterface
         // TODO: Implement initialize() method.
     }
 
-
-    /**
-     * @param Address $address
-     */
     protected function mapPostalAddress(Address $address): PostalAddress
     {
         $schemaAddress = Schema::postalAddress();
@@ -77,5 +73,4 @@ class TtAddressTransformator implements TransformatorInterface
         }
         return $schemaAddress;
     }
-
 }

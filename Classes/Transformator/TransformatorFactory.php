@@ -1,9 +1,10 @@
 <?php
+
 declare(strict_types=1);
 
 namespace GeorgRinger\SchemaOrgGenerator\Transformator;
 
-/**
+/*
  * This file is part of the "schema_org_generator" Extension for TYPO3 CMS.
  *
  * For the full copyright and license information, please read the
@@ -18,14 +19,9 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class TransformatorFactory implements SingletonInterface
 {
-
-    /**
-     * @param mixed $in
-     * @return TransformatorInterface
-     */
     public function getTransformatorForObject($in, string $link = '', array $extra = []): ?TransformatorInterface
     {
-        $transformators = (array)$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['schema-org']['transformators'];
+        $transformators = (array) $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['schema-org']['transformators'];
         foreach ($transformators as $transformator) {
             /** @var TransformatorInterface $instance */
             $instance = GeneralUtility::makeInstance($transformator);
